@@ -1,31 +1,24 @@
 import '../styles/Tours.css'
-import tour1 from '../assets/tour1.jpg'
-import tour2 from '../assets/tour2.jpg'
-import tour3 from '../assets/tour3.jpg'
+import { Link } from 'react-router-dom'
+
+const tourList = [
+  { id: 'marina', title: 'Marina Bay Sands', image: '/src/assets/tour1.jpg' },
+  { id: 'gardens', title: 'Gardens by the Bay', image: '/src/assets/tour2.jpg' },
+  { id: 'sentosa', title: 'Sentosa Island', image: '/src/assets/tour3.jpg' }
+]
 
 function Tours() {
   return (
     <div className="tours" id="tours">
-      <h2>Популярные туры в Сингапур</h2>
+      <h2>Популярные туры</h2>
       <div className="tours-grid">
-        <div className="tour-card">
-          <img src={tour1} alt="Тур 1" />
-          <h3>Marina Bay Sands</h3>
-          <p>Исследуйте центр Сингапура с гидом. Прогулки, музеи, кухня.</p>
-          <button>Подробнее</button>
-        </div>
-        <div className="tour-card">
-          <img src={tour2} alt="Тур 2" />
-          <h3>Gardens by the Bay</h3>
-          <p>Посещение Gardens by the Bay, ботанического сада и пляжей.</p>
-          <button>Подробнее</button>
-        </div>
-        <div className="tour-card">
-          <img src={tour3} alt="Тур 3" />
-          <h3>Sentosa</h3>
-          <p>Центр отдыха и развлечений для взрослых и детей, центр пляжной жизни, трекинговые маршруты по джунглям</p>
-          <button>Подробнее</button>
-        </div>
+        {tourList.map(tour => (
+          <div key={tour.id} className="tour-card">
+            <img src={tour.image} alt={tour.title} />
+            <h3>{tour.title}</h3>
+            <Link to={`/details/${tour.id}`} className="details-button">Подробнее</Link>
+          </div>
+        ))}
       </div>
     </div>
   )
