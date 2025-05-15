@@ -8,9 +8,9 @@ function Header() {
         <h1 className="logo">Singapore Tours</h1>
         <nav>
           <ul className="nav-links">
-            <li><Link to="/tours">Туры</Link></li>
+            <li><Link to="#tours">Туры</Link></li>
             <li><a href="#contacts">Контакты</a></li>
-            <li><a href="#order">Заказать тур</a></li>
+            <li><a href="/tours">Заказать тур</a></li>
           </ul>
         </nav>
       </div>

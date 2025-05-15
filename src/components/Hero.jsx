@@ -7,7 +7,7 @@ function Hero() {
       <div className="hero-content">
         <h1>Открой Сингапур</h1>
         <p>Уникальные туры и впечатления в сердце Юго-Восточной Азии</p>
-        <button>Смотреть туры</button>
+        <a href="#tours" className="hero-button">Смотреть туры</a>
       </div>
     </section>
   )

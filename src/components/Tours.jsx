@@ -1,41 +1,33 @@
 import '../styles/Tours.css'
-
-const tours = [
-  {
-    id: 1,
-    title: 'Город будущего',
-    description: 'Познакомьтесь с Сингапуром через футуристическую архитектуру и технологии.',
-    image: 'https://images.unsplash.com/photo-1569949383433-df1838f3b7e0?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 2,
-    title: 'Природные чудеса',
-    description: 'Исследуйте парки, водопады и ботанические сады города.',
-    image: 'https://images.unsplash.com/photo-1580706483914-6580873b59d6?auto=format&fit=crop&w=800&q=80',
-  },
-  {
-    id: 3,
-    title: 'Ночная жизнь',
-    description: 'Откройте лучшие рестораны, бары и вечерние шоу Сингапура.',
-    image: 'https://images.unsplash.com/photo-1549921296-3a4d6f8c8133?auto=format&fit=crop&w=800&q=80',
-  },
-]
+import tour1 from '../assets/tour1.jpg'
+import tour2 from '../assets/tour2.jpg'
+import tour3 from '../assets/tour3.jpg'
 
 function Tours() {
   return (
-    <section className="tours">
-      <h2>Популярные туры</h2>
+    <div className="tours" id="tours">
+      <h2>Популярные туры в Сингапур</h2>
       <div className="tours-grid">
-        {tours.map((tour) => (
-          <div className="tour-card" key={tour.id}>
-            <img src={tour.image} alt={tour.title} />
-            <h3>{tour.title}</h3>
-            <p>{tour.description}</p>
-            <button>Подробнее</button>
-          </div>
-        ))}
+        <div className="tour-card">
+          <img src={tour1} alt="Тур 1" />
+          <h3>Marina Bay Sands</h3>
+          <p>Исследуйте центр Сингапура с гидом. Прогулки, музеи, кухня.</p>
+          <button>Подробнее</button>
+        </div>
+        <div className="tour-card">
+          <img src={tour2} alt="Тур 2" />
+          <h3>Gardens by the Bay</h3>
+          <p>Посещение Gardens by the Bay, ботанического сада и пляжей.</p>
+          <button>Подробнее</button>
+        </div>
+        <div className="tour-card">
+          <img src={tour3} alt="Тур 3" />
+          <h3>Sentosa</h3>
+          <p>Центр отдыха и развлечений для взрослых и детей, центр пляжной жизни, трекинговые маршруты по джунглям</p>
+          <button>Подробнее</button>
+        </div>
       </div>
-    </section>
+    </div>
   )
 }
 
